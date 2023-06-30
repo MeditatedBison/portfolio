@@ -58,13 +58,13 @@
       padding: 10px 20px;
       color: #fff;
       text-decoration: none;
-      background-color: rgba(255, 255, 255, 0.2);
+      background-color: rgba(74, 202, 200, 0.8);
       border-radius: 5px;
       transition: background-color 0.3s ease;
     }
 
     .tabs ul li a:hover {
-      background-color: rgba(255, 255, 255, 0.4);
+      background-color: rgba(74, 202, 200, 1);
     }
 
     /* Content styles */
@@ -76,6 +76,12 @@
       display: block;
     }
 
+    /* Introduction section */
+    .introduction {
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
     /* Achievements section */
     .achievements {
       margin-top: 30px;
@@ -84,7 +90,7 @@
     .achievement {
       margin-bottom: 20px;
       padding: 20px;
-      background-color: rgba(255, 255, 255, 0.2);
+      background-color: rgba(143, 71, 222, 0.8);
       border-radius: 5px;
     }
 
@@ -94,12 +100,12 @@
       margin-bottom: 5px;
     }
 
-    /* About section */
-    .about {
+    /* More section */
+    .more {
       margin-top: 30px;
     }
 
-    .about p {
+    .more p {
       margin-bottom: 10px;
     }
 
@@ -137,16 +143,18 @@
 
     <div class="tabs">
       <ul>
-        <li><a href="#" class="tab active" onclick="showContent('home')">Homepage</a></li>
+        <li><a href="#" class="tab active" onclick="showContent('introduction')">Introduction</a></li>
         <li><a href="#" class="tab" onclick="showContent('achievements')">Achievements</a></li>
-        <li><a href="#" class="tab" onclick="showContent('about')">About Myself</a></li>
+        <li><a href="#" class="tab" onclick="showContent('about')">About Me</a></li>
         <li><a href="#" class="tab" onclick="showContent('more')">More</a></li>
       </ul>
     </div>
 
-    <div class="content active" id="home-content">
-      <h2>Welcome to my Portfolio!</h2>
-      <p>Hello, this is Sarvesh Soni's portfolio. Here you can learn more about my achievements, get to know me better, and explore additional information. Simply click on the tabs above to navigate through the content.</p>
+    <div class="content active" id="introduction-content">
+      <div class="introduction">
+        <h2>Hello, This is Sarvesh Soni's Portfolio!</h2>
+        <p>Welcome to my portfolio website. Here you can explore my achievements, learn more about me, and find additional information. Simply click on the tabs above to navigate through the content.</p>
+      </div>
     </div>
 
     <div class="content" id="achievements-content">
@@ -164,17 +172,17 @@
     </div>
 
     <div class="content" id="about-content">
-      <h2>About Myself</h2>
+      <h2>About Me</h2>
       <div class="about">
-        <p>Hello, I'm Sarvesh Soni, a 17-year-old passionate about mathematics. I am currently pursuing the B.Math program at the Indian Statistical Institute, Bangalore.</p>
+        <p>Hello, I'm Sarvesh Soni, a 17-year-old passionate about mathematics. I am going to study at the Indian Statistical Institute, Bangalore for the next 3 years in the B.Math program.</p>
         <p>I have a strong love for mathematics and have achieved remarkable milestones in my academic journey. I qualified for the Indian National Mathematics Olympiad (INMO) among the top 126 students in the country. Additionally, I secured AIR 21 in the ISI B.Math UG Entrance exam.</p>
-        <p>Aside from mathematics, I am also an avid chess and piano player. I have a chess rating of 2000+.</p>
+        <p>Aside from mathematics, I am also an avid chess and piano aficionado. I have a chess rating of 2000+.</p>
       </div>
     </div>
 
     <div class="content" id="more-content">
       <h2>More</h2>
-      <p>Thank you for reading till here.</p>
+      <p>Add your additional content here.</p>
     </div>
 
     <div class="footer">
