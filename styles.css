@@ -46,28 +46,28 @@ body {
  body.index {
     background-image: url("https://media1.giphy.com/media/l1Kdd40otLiszFTMs/giphy.gif?ep=v1_gifs_related");
     background-size: cover;
-    background-position: center;
+    background-position: top;
   }
   
   /* Achievements Page Styles */
   body.index_1 {
     background-image: url("https://media1.giphy.com/media/3ohs7R2GceFRJfCKqs/giphy.gif?ep=v1_gifs_related");
     background-size: cover;
-    background-position: center;
+    background-position: top;
   }
   
   /* About Me Page Styles */
   body.index_2 {
     background-image: url("https://66.media.tumblr.com/99818963a48628f26e5cedb153898934/tumblr_p5977kGA9j1x6ms67o5_500.gif");
     background-size: cover;
-    background-position: center;
+    background-position: top;
   }
   
   /* More Page Styles */
   body.index_3 {
     background-image: url("https://media1.giphy.com/media/l1Kdd40otLiszFTMs/giphy.gif?ep=v1_gifs_related");
     background-size: cover;
-    background-position: center;
+    background-position: top;
   }
   
   /* Footer Styles */
