@@ -11,11 +11,17 @@ body {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
+    position: relative;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   }
   
   /* Navigation Styles */
   nav {
-    background-color: #1f1f1f;
+    background-color: rgba(0, 0, 0, 0.8);
     padding: 10px;
   }
   
@@ -37,7 +43,7 @@ body {
   }
   
   /* Homepage Styles */
-  body.index {
+ body.index {
     background-image: url("https://media1.giphy.com/media/l1Kdd40otLiszFTMs/giphy.gif?ep=v1_gifs_related");
     background-size: cover;
     background-position: center;
