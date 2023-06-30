@@ -23,6 +23,38 @@
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     }
 
+    .tabs {
+      margin-bottom: 20px;
+    }
+
+    .tabs ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+    }
+
+    .tabs ul li {
+      margin-right: 10px;
+    }
+
+    .tabs ul li a {
+      display: block;
+      padding: 10px 20px;
+      color: #333;
+      text-decoration: none;
+      background-color: #f5f5f5;
+      border-radius: 5px;
+    }
+
+    .tabs ul li a:hover {
+      background-color: #e5e5e5;
+    }
+
+    .content {
+      margin-top: 20px;
+    }
+
     h1 {
       color: #333;
       text-align: center;
@@ -63,19 +95,37 @@
 <body>
   <div class="container">
     <h1>Sarvesh Soni</h1>
-    <h2>About Me</h2>
-    <p>Hello, I'm Sarvesh Soni, a 17-year-old passionate about mathematics. I am currently pursuing the B.Math program at the Indian Statistical Institute, Bangalore.</p>
-    <p>I have a strong love for mathematics and have achieved remarkable milestones in my academic journey. I qualified for the Indian National Mathematics Olympiad (INMO) among the top 126 students in the country. Additionally, I secured AIR 21 in the ISI B.Math UG Entrance exam.</p>
-    <p>Aside from mathematics, I am also an avid chess and piano player. I have a chess rating of 2000+.</p>
 
-    <h2>Achievements</h2>
-    <div class="achievement">
-      <h3>Indian National Mathematics Olympiad (INMO)</h3>
-      <p>Qualified among the top 126 students in the country.</p>
+    <div class="tabs">
+      <ul>
+        <li><a href="#achievements">Achievements</a></li>
+        <li><a href="#about">About Myself</a></li>
+        <li><a href="#more">More</a></li>
+      </ul>
     </div>
-    <div class="achievement">
-      <h3>ISI B.Math UG Entrance</h3>
-      <p>AIR 21 in the entrance examination.</p>
+
+    <div class="content" id="achievements">
+      <h2>Achievements</h2>
+      <div class="achievement">
+        <h3>Indian National Mathematics Olympiad (INMO)</h3>
+        <p>Qualified among the top 126 students in the country.</p>
+      </div>
+      <div class="achievement">
+        <h3>ISI B.Math UG Entrance</h3>
+        <p>AIR 21 in the entrance examination.</p>
+      </div>
+    </div>
+
+    <div class="content" id="about">
+      <h2>About Myself</h2>
+      <p>Hello, I'm Sarvesh Soni, a 17-year-old passionate about mathematics. I am currently pursuing the B.Math program at the Indian Statistical Institute, Bangalore.</p>
+      <p>I have a strong love for mathematics and have achieved remarkable milestones in my academic journey. I qualified for the Indian National Mathematics Olympiad (INMO) among the top 126 students in the country. Additionally, I secured AIR 21 in the ISI B.Math UG Entrance exam.</p>
+      <p>Aside from mathematics, I am also an avid chess and piano player. I have a chess rating of 2000+.</p>
+    </div>
+
+    <div class="content" id="more">
+      <h2>More</h2>
+      <p>Add your additional content here.</p>
     </div>
 
     <div class="footer">
