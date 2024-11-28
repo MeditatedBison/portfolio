@@ -1,86 +1,43 @@
 /* Global Styles */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #1f1f1f;
-    color: #fff;
-  }
-  
-  .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    position: absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
-    z-index: 1;
-    background-color: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(10px);
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  }
-  
-  /* Navigation Styles */
-  nav {
-    background-color: rgba(0, 0, 0, 0.8);
-    padding: 10px;
-  }
-  
-  nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: space-around;
-  }
-  
-  nav ul li {
-    margin-right: 10px;
-  }
-  
-  nav ul li a {
-    color: #fff;
-    text-decoration: none;
-  }
-  
-  /* Homepage Styles */
- body.index {
-    background-image: url("https://media1.giphy.com/media/l1Kdd40otLiszFTMs/giphy.gif?ep=v1_gifs_related");
-    background-size: cover;
-    background-position: top;
-  }
-  
-  /* Achievements Page Styles */
-  body.index_1 {
-    background-image: url("https://media1.giphy.com/media/3ohs7R2GceFRJfCKqs/giphy.gif?ep=v1_gifs_related");
-    background-size: cover;
-    background-position: top;
-  }
-  
-  /* About Me Page Styles */
-  body.index_2 {
-    background-image: url("https://66.media.tumblr.com/99818963a48628f26e5cedb153898934/tumblr_p5977kGA9j1x6ms67o5_500.gif");
-    background-size: cover;
-    background-position: top;
-  }
-  
-  /* More Page Styles */
-  body.index_3 {
-    background-image: url("https://media1.giphy.com/media/l1Kdd40otLiszFTMs/giphy.gif?ep=v1_gifs_related");
-    background-size: cover;
-    background-position: top;
-  }
-  
-  /* Footer Styles */
-  footer {
-    margin-top: 20px;
-    text-align: center;
-    color: #888;
-  }
-  
-  footer p {
-    font-size: 12px;
-  }
-  
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #1f1f1f;
+  color: #fff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Navigation Styles */
+nav {
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 15px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color
