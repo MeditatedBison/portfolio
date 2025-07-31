@@ -1,74 +1,344 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sarvesh Soni - Portfolio</title>
-  <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarvesh Soni | Mathematics & Computer Science</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #111827;
+            color: #E5E7EB;
+            overflow-x: hidden;
+        }
+
+        #background-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        main, header, footer {
+            position: relative;
+            z-index: 1;
+        }
+
+        .accent-color { color: #3B82F6; }
+        .bg-accent { background-color: #3B82F6; }
+        .border-accent { border-color: #3B82F6; }
+
+        .card {
+            background-color: rgba(31, 41, 55, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid #374151;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.1);
+            border-color: #3B82F6;
+        }
+        .section-title {
+            border-bottom: 2px solid #3B82F6;
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+        
+        /* Scroll-triggered animation styles */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
-<body class="index">
-  <header>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="index_1.html">Achievements</a></li>
-        <li><a href="index_2.html">About Me</a></li>
-        <li><a href="index_3.html">More</a></li>
-      </ul>
-      <button id="dark-mode-toggle">Toggle Dark Mode</button>
-    </nav>
-  </header>
+<body class="antialiased">
 
-  <main>
-    <section class="hero">
-      <div class="container">
-        <h1>Sarvesh Soni</h1>
-        <p>Welcome to my portfolio website. Explore my achievements, projects, and more.</p>
-      </div>
-    </section>
+    <canvas id="background-canvas"></canvas>
 
-    <section class="about">
-      <div class="container">
-        <h2>About Me</h2>
-        <p>Hello, this is Sarvesh Soni's portfolio website. I am passionate about coding and technology.</p>
-      </div>
-    </section>
-
-    <section class="projects">
-      <div class="container">
-        <h2>Projects</h2>
-        <div class="project-card">
-          <h3>Project Title</h3>
-          <p>Project description goes here.</p>
+    <!-- Header & Navigation -->
+    <header class="bg-gray-900/50 backdrop-blur-lg sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#hero" class="text-2xl font-bold text-white">Sarvesh Soni</a>
+            <div class="hidden md:flex space-x-6 text-lg">
+                <a href="#about" class="hover:text-blue-400 transition-colors">About</a>
+                <a href="#experience" class="hover:text-blue-400 transition-colors">Experience</a>
+                <a href="#achievements" class="hover:text-blue-400 transition-colors">Achievements</a>
+                <a href="#skills" class="hover:text-blue-400 transition-colors">Skills</a>
+                <a href="#contact" class="hover:text-blue-400 transition-colors">Contact</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-white">
+                <i data-lucide="menu"></i>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-2">
+            <a href="#about" class="nav-link block hover:text-blue-400 transition-colors">About</a>
+            <a href="#experience" class="nav-link block hover:text-blue-400 transition-colors">Experience</a>
+            <a href="#achievements" class="nav-link block hover:text-blue-400 transition-colors">Achievements</a>
+            <a href="#skills" class="nav-link block hover:text-blue-400 transition-colors">Skills</a>
+            <a href="#contact" class="nav-link block hover:text-blue-400 transition-colors">Contact</a>
         </div>
-        <!-- Add more project cards here -->
-      </div>
-    </section>
+    </header>
 
-    <section class="contact">
-      <div class="container">
-        <h2>Contact Me</h2>
-        <form>
-          <label for="name">Name:</label>
-          <input type="text" id="name" name="name" required>
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required>
-          <label for="message">Message:</label>
-          <textarea id="message" name="message" required></textarea>
-          <button type="submit">Send</button>
-        </form>
-      </div>
-    </section>
-  </main>
+    <main class="container mx-auto px-6">
 
-  <footer>
-    <div class="container">
-      <p>© 2023 Sarvesh Soni | Portfolio</p>
-    </div>
-  </footer>
+        <!-- Hero Section -->
+        <section id="hero" class="text-center min-h-[80vh] flex flex-col justify-center items-center">
+            <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight">
+                Sarvesh Soni
+            </h1>
+            <p class="mt-4 text-xl md:text-2xl text-gray-300 max-w-3xl">
+                A Mathematics student exploring the worlds of 
+                <span class="accent-color font-semibold">code, creativity, and problem-solving.</span>
+            </p>
+            <div class="mt-8 flex justify-center space-x-6">
+                <a href="mailto:sarveshsoni327@gmail.com" class="text-gray-400 hover:text-white transition-colors" aria-label="Email"><i data-lucide="mail" class="w-8 h-8"></i></a>
+                <a href="https://www.linkedin.com/in/meditatedbison" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors" aria-label="LinkedIn"><i data-lucide="linkedin" class="w-8 h-8"></i></a>
+                <a href="https://www.github.com/meditatedbison" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors" aria-label="GitHub"><i data-lucide="github" class="w-8 h-8"></i></a>
+            </div>
+        </section>
 
-  <script src="scripts.js"></script>
+        <!-- About Section -->
+        <section id="about" class="py-16 md:py-24 fade-in-section">
+            <h2 class="section-title text-3xl font-bold text-white mb-12">About Me</h2>
+            <div class="grid md:grid-cols-5 gap-12 items-center">
+                <div class="md:col-span-3 text-lg text-gray-300 space-y-4">
+                    <p>I am a dedicated mathematics student currently pursuing my Bachelor's degree from the prestigious Indian Statistical Institute in Bangalore. My academic interests are centered around Probability, Algebra, and the design and analysis of Algorithms.</p>
+                    <p>Beyond my core curriculum, I am deeply involved in the world of Olympiad Mathematics, a field that sharpens my problem-solving abilities. I enjoy the challenge of tackling complex problems and the elegance of mathematical proofs.</p>
+                    <p>In my free time, I enjoy teaching, playing chess, and exploring the versatility of Linux as an Arch user with Hyprland.</p>
+                </div>
+                <div class="md:col-span-2">
+                    <div class="card p-6 rounded-lg">
+                        <h3 class="font-bold text-xl text-white mb-4">Quick Info</h3>
+                        <ul class="space-y-3 text-gray-300">
+                            <li class="flex items-center"><i data-lucide="graduation-cap" class="w-5 h-5 mr-3 accent-color"></i> B.Math, ISI Bangalore</li>
+                            <li class="flex items-center"><i data-lucide="map-pin" class="w-5 h-5 mr-3 accent-color"></i> Bengaluru, Karnataka</li>
+                            <li class="flex items-center"><i data-lucide="puzzle" class="w-5 h-5 mr-3 accent-color"></i> Interests: Problem Solving</li>
+                            <li class="flex items-center"><i data-lucide="chess-rook" class="w-5 h-5 mr-3 accent-color"></i> Hobbies: Chess, Teaching</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="py-16 md:py-24 fade-in-section">
+            <h2 class="section-title text-3xl font-bold text-white mb-12">Experience</h2>
+            <div class="relative border-l-2 border-gray-700 pl-8">
+                <div class="mb-12">
+                    <div class="absolute -left-1.5 mt-1.5 w-3 h-3 bg-blue-500 rounded-full"></div>
+                    <time class="mb-1 text-sm font-normal leading-none text-gray-400">Summer 2025</time>
+                    <h3 class="text-2xl font-semibold text-white mt-1">Instructor, Math Olympiad Summer Program</h3>
+                    <p class="mb-4 text-base font-normal text-gray-400">RG Academy, Ajmer, Rajasthan</p>
+                    <ul class="list-disc list-inside text-gray-300 space-y-2">
+                        <li>Delivered ~45 hours of instruction covering Set Theory, Number Theory, Algebra, Advanced Inequalities, Combinatorics, and Geometry.</li>
+                        <li>Provided targeted training for prestigious competitions like IOQM, RMO, INMO, and IMO.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements Section -->
+        <section id="achievements" class="py-16 md:py-24 fade-in-section">
+            <h2 class="section-title text-3xl font-bold text-white mb-12">Awards & Achievements</h2>
+            <div class="space-y-8">
+                <div class="card p-6 rounded-lg">
+                    <ul class="space-y-4 text-gray-300">
+                        <li class="flex items-start"><i data-lucide="award" class="w-5 h-5 mr-3 mt-1 accent-color shrink-0"></i> <span><strong class="text-white">Merit Certificate:</strong> Awarded in the "Indian Olympiad Qualifier for Mathematics" for three consecutive years (2020, 2021, 2022).</span></li>
+                        <li class="flex items-start"><i data-lucide="star" class="w-5 h-5 mr-3 mt-1 accent-color shrink-0"></i> <span><strong class="text-white">Indian National Mathematical Olympiad (INMO):</strong> Attended the INMO Training Camp (Dec 2022) and subsequently wrote the INMO exam (Jan 2023).</span></li>
+                        <li class="flex items-start"><i data-lucide="bar-chart-2" class="w-5 h-5 mr-3 mt-1 accent-color shrink-0"></i> <span><strong class="text-white">JEE Advanced 2023:</strong> Achieved a score of 86/120 in Mathematics.</span></li>
+                        <li class="flex items-start"><i data-lucide="percent" class="w-5 h-5 mr-3 mt-1 accent-color shrink-0"></i> <span><strong class="text-white">JEE Mains 2023:</strong> Secured a 98.1 percentile.</span></li>
+                        <li class="flex items-start"><i data-lucide="trophy" class="w-5 h-5 mr-3 mt-1 accent-color shrink-0"></i> <span><strong class="text-white">ISI Entrance 2023:</strong> Secured AIR 28 in the B.Math Entrance.</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-16 md:py-24 fade-in-section">
+            <div class="grid md:grid-cols-2 gap-16">
+                <div>
+                    <h2 class="section-title text-3xl font-bold text-white mb-12">Skills</h2>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                        <div class="card p-4 text-center rounded-lg"><h3 class="font-bold text-lg text-white">LaTeX</h3><p class="accent-color">Advanced</p></div>
+                        <div class="card p-4 text-center rounded-lg"><h3 class="font-bold text-lg text-white">Problem Solving</h3><p class="accent-color">Advanced</p></div>
+                        <div class="card p-4 text-center rounded-lg"><h3 class="font-bold text-lg text-white">C</h3><p class="accent-color">Intermediate</p></div>
+                        <div class="card p-4 text-center rounded-lg"><h3 class="font-bold text-lg text-white">DAA</h3><p class="accent-color">Beginner</p></div>
+                        <div class="card p-4 text-center rounded-lg"><h3 class="font-bold text-lg text-white">R</h3><p class="accent-color">Beginner</p></div>
+                    </div>
+                </div>
+                <div>
+                    <h2 class="section-title text-3xl font-bold text-white mb-12">Extracurricular</h2>
+                    <div class="card p-6 rounded-lg">
+                        <ul class="list-disc list-inside text-gray-300 space-y-3">
+                            <li>Attending Math Club Talks (2023 - Present)</li>
+                            <li>Piano (2015 - Present)</li>
+                            <li>Chess Player, <a href="https://ratings.fide.com/profile/537053124" target="_blank" rel="noopener noreferrer" class="border-b border-dashed border-blue-400 hover:text-blue-400">FIDE Rated 1581</a></li>
+                            <li>Arch User (with hyprland) (2024 - Present)</li>
+                            <li>Mess Committee Secretary, ISI (2023 - 2024)</li>
+                            <li>Election Committee Member, ISI (2024)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-16 md:py-24 text-center fade-in-section">
+            <h2 class="text-3xl font-bold text-white mb-4">Get In Touch</h2>
+            <p class="text-gray-400 max-w-xl mx-auto mb-8">I'm always open to discussing new opportunities, interesting problems, or just connecting with like-minded people. Feel free to reach out.</p>
+            <a href="mailto:sarveshsoni327@gmail.com" class="inline-block bg-blue-600 text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-blue-700 transition-transform transform hover:scale-105">Say Hello</a>
+        </section>
+    </main>
+
+    <footer class="border-t border-gray-800">
+        <div class="container mx-auto px-6 py-6 text-center text-gray-500">
+            <p>&copy; 2025 Sarvesh Soni. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Fix for scroll restoration issue on refresh
+        history.scrollRestoration = 'manual';
+        window.onbeforeunload = function () {
+            window.scrollTo(0, 0);
+        };
+
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // --- Mobile Menu Toggle ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = mobileMenu.querySelectorAll('.nav-link');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // --- Scroll Animation Logic ---
+        const animatedSections = document.querySelectorAll('.fade-in-section');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        animatedSections.forEach(section => {
+            observer.observe(section);
+        });
+
+        // --- Interactive Canvas Background ---
+        const canvas = document.getElementById('background-canvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        let particlesArray;
+        const mouse = { x: null, y: null };
+
+        window.addEventListener('mousemove', (event) => {
+            mouse.x = event.x;
+            mouse.y = event.y;
+        });
+
+        class Particle {
+            constructor(x, y, directionX, directionY, size, color) {
+                this.x = x;
+                this.y = y;
+                this.directionX = directionX;
+                this.directionY = directionY;
+                this.size = size;
+                this.color = color;
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
+                ctx.fillStyle = 'rgba(59, 130, 246, 0.5)';
+                ctx.fill();
+            }
+            update() {
+                if (this.x > canvas.width || this.x < 0) this.directionX = -this.directionX;
+                if (this.y > canvas.height || this.y < 0) this.directionY = -this.directionY;
+                this.x += this.directionX;
+                this.y += this.directionY;
+                this.draw();
+            }
+        }
+
+        function init() {
+            particlesArray = [];
+            let numberOfParticles = (canvas.height * canvas.width) / 9000;
+            for (let i = 0; i < numberOfParticles; i++) {
+                let size = (Math.random() * 2) + 1;
+                let x = (Math.random() * (innerWidth - size * 2) + size * 2);
+                let y = (Math.random() * (innerHeight - size * 2) + size * 2);
+                let directionX = (Math.random() * .4) - .2;
+                let directionY = (Math.random() * .4) - .2;
+                particlesArray.push(new Particle(x, y, directionX, directionY, size));
+            }
+        }
+
+        function connect() {
+            let opacityValue = 1;
+            for (let a = 0; a < particlesArray.length; a++) {
+                for (let b = a; b < particlesArray.length; b++) {
+                    let distance = Math.sqrt(Math.pow(particlesArray[a].x - particlesArray[b].x, 2) + Math.pow(particlesArray[a].y - particlesArray[b].y, 2));
+                    if (distance < 150) {
+                        opacityValue = 1 - (distance / 150);
+                        ctx.strokeStyle = `rgba(129, 140, 248, ${opacityValue})`;
+                        ctx.lineWidth = 1;
+                        ctx.beginPath();
+                        ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+                        ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+            ctx.clearRect(0, 0, innerWidth, innerHeight);
+            particlesArray.forEach(p => p.update());
+            connect();
+        }
+
+        window.addEventListener('resize', () => {
+            canvas.width = innerWidth;
+            canvas.height = innerHeight;
+            init();
+        });
+        
+        window.addEventListener('mouseout', () => {
+            mouse.x = undefined;
+            mouse.y = undefined;
+        });
+
+        init();
+        animate();
+    </script>
+
 </body>
 </html>
